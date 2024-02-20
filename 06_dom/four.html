@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = langName;
+        const ul = document.querySelector('.language');
+        ul.appendChild(li);
+    }
+    // addLanguage("C++");
+    // addLanguage("Python");
+
+    function addOptimizedLanguage(langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        const ul = document.querySelector('.language');
+        ul.appendChild(li);
+    }
+    addOptimizedLanguage("C++");
+    addOptimizedLanguage("Golang");
+    addOptimizedLanguage("Rust");
+
+    // Edit
+    function editLanguage(langName) {
+        const secondLanguage = document.querySelector('li:nth-child(2)');
+        // console.log(secondLanguage);
+        // secondLanguage.innerHTML = langName;
+        const li = document.createElement('li');
+        li.textContent = langName;
+        secondLanguage.replaceWith(li);
+    }
+    editLanguage('Python');
+
+    //edit
+    // const firstLang = document.querySelector("li:first-child")
+    // firstLang.outerHTML = '<li>TypeScript</li>'
+
+    // Remove
+    function removeLi() {
+        const lastLang = document.querySelector('li:last-child')
+        lastLang.remove();
+    }
+    // removeLi();
+
+</script>
+
+</html>
